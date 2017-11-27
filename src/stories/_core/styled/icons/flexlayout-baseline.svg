@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flexlayout-baeline</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flexlayout-baeline">
+            <rect id="Rectangle" fill="#9E9E9E" transform="translate(256.000000, 206.000000) rotate(90.000000) translate(-256.000000, -206.000000) " x="240" y="-17" width="32" height="446"></rect>
+            <g transform="translate(256.500000, 256.000000) rotate(90.000000) translate(-256.500000, -256.000000) translate(70.000000, 128.000000)">
+                <g id="Group-44">
+                    <rect id="Rectangle-14" fill="#9E9E9E" x="93" y="0" width="256.4375" height="108"></rect>
+                    <rect id="Rectangle-10" fill="#989595" x="26" y="168.125" width="46.6199989" height="66.6200027"></rect>
+                    <rect id="Rectangle-10" fill="#989595" x="26" y="168.125" width="46.6199989" height="66.6200027"></rect>
+                    <rect id="Rectangle-10-Copy" fill="#39393A" x="111" y="21" width="46" height="66"></rect>
+                    <rect id="Rectangle-14" fill="#9E9E9E" x="0" y="148" width="373" height="108"></rect>
+                </g>
+                <rect id="Rectangle-10" fill="#39393A" x="18" y="169" width="46" height="66"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

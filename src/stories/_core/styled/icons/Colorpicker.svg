@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Colorpicker</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Colorpicker" fill-rule="nonzero" fill="#E0E0E0">
+            <path d="M256.5,390 C330.230014,390 390,330.230014 390,256.5 C390,182.769986 330.230014,123 256.5,123 C182.769986,123 123,182.769986 123,256.5 C123,330.230014 182.769986,390 256.5,390 Z M256,478 C133.392786,478 34,378.607214 34,256 C34,133.392786 133.392786,34 256,34 C378.607214,34 478,133.392786 478,256 C478,378.607214 378.607214,478 256,478 Z" id="Oval"></path>
+        </g>
+    </g>
+</svg>

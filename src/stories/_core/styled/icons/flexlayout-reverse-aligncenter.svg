@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flexlayout-reverse-aligncenter</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flexlayout-reverse-aligncenter" fill="#9E9E9E">
+            <g transform="translate(79.000000, 127.000000)" id="Group-44">
+                <g>
+                    <rect id="Rectangle-14" x="54.4615385" y="0" width="245.076923" height="108"></rect>
+                    <rect id="Rectangle-14" x="0" y="148.153846" width="354" height="108"></rect>
+                </g>
+            </g>
+            <rect id="Rectangle" x="240" y="32" width="32" height="446"></rect>
+        </g>
+    </g>
+</svg>

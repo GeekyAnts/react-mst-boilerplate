@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flexlitem-noshrink</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flexlitem-noshrink" fill="#9E9E9E">
+            <g transform="translate(33.000000, 32.000000)">
+                <path d="M382,332.842105 L382,362 L373.71875,362 L357.15625,333.753289 C337.281151,297.913198 316.578233,274.52637 295.046875,263.592105 C272.411345,252.050381 248.39596,245.97588 223,245.368421 L223,318.263158 L64,201.631579 L223,85 L223,157.894737 C273.239835,160.324574 312.713398,177.333175 341.421875,208.921053 C368.474094,239.294012 382,280.600616 382,332.842105 Z" id=""></path>
+                <rect id="Rectangle" x="0" y="0" width="32" height="446"></rect>
+                <rect id="Rectangle-Copy" x="414" y="0" width="32" height="446"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

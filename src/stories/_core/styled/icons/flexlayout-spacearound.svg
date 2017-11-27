@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flexlayout-spacearound</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flexlayout-spacearound" fill="#9E9E9E">
+            <g transform="translate(33.000000, 32.000000)">
+                <g id="Group-42" transform="translate(64.000000, 108.000000)">
+                    <rect id="Rectangle-14" x="0" y="0" width="108" height="230.581464"></rect>
+                    <rect id="Rectangle-14-Copy" x="210" y="0" width="108" height="230.581464"></rect>
+                </g>
+                <rect id="Rectangle" x="414" y="0" width="32" height="446"></rect>
+                <rect id="Rectangle-Copy" x="207" y="0" width="32" height="446"></rect>
+                <rect id="Rectangle-Copy-2" x="0" y="0" width="32" height="446"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

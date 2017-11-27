@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flip1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flip1">
+            <g transform="translate(33.000000, 32.000000)" id="Rectangle-13">
+                <polygon fill="#9E9E9E" points="208.133333 0 208.133333 445.666916 0 445.666916"></polygon>
+                <polygon fill="#666667" transform="translate(341.933333, 222.833458) scale(-1, 1) translate(-341.933333, -222.833458) " points="446 0 446 445.666916 237.866667 445.666916"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

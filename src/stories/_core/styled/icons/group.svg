@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="group">
+            <g id="Group">
+                <g id="group" transform="translate(96.000000, 112.000000)">
+                    <g id="Group-32">
+                        <g id="Group-33">
+                            <rect id="Rectangle-26" fill="#34353A" x="0.0802833043" y="0.723809462" width="208" height="224"></rect>
+                            <rect id="Rectangle-26" fill="#6F727D" x="111.77994" y="64" width="208" height="224"></rect>
+                        </g>
+                    </g>
+                </g>
+                <path d="M32,480 L480,480 L480,32 L32,32 L32,480 Z M3.43624161,5.08665941e-16 L508.563758,5.08665941e-16 C510.461542,-3.48617235e-16 512,1.53845777 512,3.43624161 L512,508.563758 C512,510.461542 510.461542,512 508.563758,512 L3.43624161,512 C1.53845777,512 7.41077431e-16,510.461542 5.08665941e-16,508.563758 L0,3.43624161 C2.7625445e-16,1.53845777 1.53845777,3.48617235e-16 3.43624161,5.08665941e-16 Z" id="Rectangle" fill="#6F727D" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

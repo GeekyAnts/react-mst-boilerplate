@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flexlayout-align-stretch</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flexlayout-align-stretch" fill="#9E9E9E">
+            <g transform="translate(84.000000, 134.000000)" id="flexlayout-align-justify">
+                <g>
+                    <g id="Group-46">
+                        <rect id="Rectangle-14" x="0" y="0" width="343.755981" height="101.302326"></rect>
+                        <rect id="Rectangle-14" x="0" y="139.926728" width="343.755981" height="101.302326"></rect>
+                    </g>
+                </g>
+            </g>
+            <rect id="Rectangle" x="447" y="32" width="32" height="446"></rect>
+            <rect id="Rectangle-Copy" x="33" y="32" width="32" height="446"></rect>
+        </g>
+    </g>
+</svg>

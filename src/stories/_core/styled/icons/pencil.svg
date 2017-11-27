@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>lock_pencil</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="lock_pencil" fill="#9E9E9E">
+            <path d="M36,385.8125 L307.953125,113.859375 L400.140625,206.046875 L128.1875,478 L36,478 L36,385.8125 Z M471.585938,134.601562 L425.492188,180.695312 L333.304688,88.5078125 L379.398438,42.4140625 C390.1537,31.6588004 401.292911,31.6588004 412.816406,42.4140625 L471.585938,101.183594 C482.3412,112.707089 482.3412,123.8463 471.585938,134.601562 Z" id=""></path>
+        </g>
+    </g>
+</svg>

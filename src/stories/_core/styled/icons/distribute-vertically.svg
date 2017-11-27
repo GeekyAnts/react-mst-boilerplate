@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>distribute-vertically</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="distribute-vertically" fill="#6F727D">
+            <g transform="translate(256.394737, 256.394737) rotate(90.000000) translate(-256.394737, -256.394737) translate(0.394737, 0.394737)">
+                <rect id="Rectangle" x="-2.10942375e-15" y="0" width="32" height="512"></rect>
+                <rect id="Rectangle-Copy" x="480" y="0" width="32" height="512"></rect>
+                <rect id="Rectangle-15" x="192" y="16" width="128" height="480"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

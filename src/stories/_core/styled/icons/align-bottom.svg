@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>align-bottom</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="align-bottom" fill="#6F727D">
+            <g transform="translate(256.000000, 209.000000) scale(-1, 1) rotate(-90.000000) translate(-256.000000, -209.000000) translate(48.000000, 65.000000)" id="Group">
+                <g>
+                    <rect id="Rectangle-14" x="0" y="0" width="320" height="128"></rect>
+                    <rect id="Rectangle-14" x="1" y="160" width="415" height="128"></rect>
+                </g>
+            </g>
+            <rect id="Rectangle" transform="translate(257.000000, 496.000000) rotate(90.000000) translate(-257.000000, -496.000000) " x="241" y="240" width="32" height="512"></rect>
+        </g>
+    </g>
+</svg>

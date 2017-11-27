@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flexlayout-vertical-justify-center</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flexlayout-vertical-justify-center" fill="#9E9E9E">
+            <g transform="translate(256.000000, 255.500000) rotate(90.000000) translate(-256.000000, -255.500000) translate(95.500000, 32.500000)">
+                <g id="Group-48" transform="translate(64.000000, 67.000000)">
+                    <rect id="Rectangle-14" x="-20" y="0" width="108" height="311.648692"></rect>
+                    <rect id="Rectangle-14-Copy" x="200" y="0" width="108" height="311.648692"></rect>
+                </g>
+                <rect id="Rectangle" x="190" y="0" width="32" height="446"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

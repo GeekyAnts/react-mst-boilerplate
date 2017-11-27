@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="512px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Insert</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Insert" fill="#6F727D">
+            <g id="insert">
+                <g id="Insert" transform="translate(112.000000, 112.000000)">
+                    <g id="Group-38">
+                        <polygon id="Add" points="112.733825 0 176.545455 0 176.545455 112.550093 288 112.550093 288 176.260111 176.545455 176.260111 176.545455 287.810204 112.733825 287.810204 112.733825 176.260111 0 176.260111 0 112.550093 112.733825 112.550093"></polygon>
+                    </g>
+                </g>
+                <path d="M32,480 L480,480 L480,32 L32,32 L32,480 Z M3.43624161,5.09806447e-16 L508.563758,5.09806447e-16 C510.461542,-3.49398888e-16 512,1.54190723 512,3.44394619 L512,508.556054 C512,510.458093 510.461542,512 508.563758,512 L3.43624161,512 C1.53845777,512 7.41077431e-16,510.458093 5.08665941e-16,508.556054 L0,3.44394619 C2.7625445e-16,1.54190723 1.53845777,3.49398888e-16 3.43624161,5.09806447e-16 Z" id="Rectangle" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

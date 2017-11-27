@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="448px" height="447px" viewBox="0 0 448 447" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>flexitem-selfend</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="flexitem-selfstretch" transform="translate(-33.000000, -32.000000)">
+            <g id="flexitem-selfend" transform="translate(257.500000, 255.500000) scale(-1, 1) rotate(90.000000) translate(-257.500000, -255.500000) translate(25.000000, 14.000000)">
+                <g id="Group-43" transform="translate(58.000000, 187.000000)" fill="#D4D4D9">
+                    <rect id="Rectangle-14" x="0" y="0" width="348.4" height="108"></rect>
+                </g>
+                <path d="M13.4,21.9272727 L13.4,460.472727" id="Line" stroke="#B5B5B5" stroke-width="8" stroke-linecap="square"></path>
+                <path d="M451.4,21.9272727 L451.4,460.472727" id="Line-Copy" stroke="#B5B5B5" stroke-width="8" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>
