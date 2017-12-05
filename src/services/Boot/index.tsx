@@ -1,6 +1,8 @@
 import * as ReactDOM from "react-dom";
 import * as React from "react";
+import { Provider } from "mobx-react";
 import Routes from "../../routes";
+import AppStore from "../../store";
 
 export default class Boot {
   constructor() {
@@ -8,6 +10,10 @@ export default class Boot {
   }
 
   boot(): any {
-    ReactDOM.render(<Routes />, document.getElementById("root") as HTMLElement);
+    ReactDOM.render(
+    <Provider {...AppStore}>
+      <Routes />
+    </Provider>, 
+    document.getElementById("root") as HTMLElement);
   }
 }

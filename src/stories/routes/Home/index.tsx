@@ -7,48 +7,47 @@ import {
   FormGroup,
   ControlLabel,
   FormControl,
-  HelpBlock,
-  Button
+  Button,
+  // HelpBlock,
 } from "react-bootstrap";
 import DevTools from "mobx-react-devtools";
 
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 
-import LoginFormModel from "../../../models/LoginFormModel";
-
-function FieldGroup({ id, label, help, ...props }: any) {
-  return (
-    <FormGroup controlId={id}>
-      <ControlLabel>{label}</ControlLabel>
-      <FormControl {...props} />
-      {help && <HelpBlock>{help}</HelpBlock>}
-    </FormGroup>
-  );
+interface State {
+  username: string;
+  password: string;
 }
-
+interface Props {}
+@inject("app")
 @observer
-export default class Home extends React.Component {
-  loginForm: typeof LoginFormModel.Type;
+export default class Home extends React.Component<{app?: any}, State> {
 
-  constructor(props: any) {
+  constructor(props: Props) {
     super(props);
-    this.loginForm = LoginFormModel.create({
-      name: "Sanket",
-      fields: {
-        username: "asdasd",
-        password: "asdasds"
-      }
-    });
+    this.state = {
+      username: "",
+      password: "",
+    };
+  }
 
-    this.loginForm.updateField("username", "Sanket");
-    this.loginForm.updateField("password", "123456");
+  handleChanges(event: any, name: string) {
+    const newState = this.state;
+    newState[name] = event.target.value;
+    this.setState(newState);
+  }
+  handleSubmit(event: any) {
+    const { app } = this.props;
+    app.login("kuldeep", "kuldeep");
+    event.preventDefault();
   }
 
   render() {
-    const { username, password }: any = this.loginForm.getHandlers();
+    const { app } = this.props;
+    console.log("iuwbfuwehfuiw", this.props)
     return (
       <div>
-        <Navbar inverse collapseOnSelect staticTop>
+        <Navbar inverse={true} collapseOnSelect={true} staticTop={true}>
           <Navbar.Header>
             <Navbar.Brand>
               <a href="#">MST TypeScript Boilerplate</a>
@@ -58,25 +57,24 @@ export default class Home extends React.Component {
         </Navbar>
         <Grid>
           <Col>
-            <Panel header="Login">
-              <form>
-                <FieldGroup
-                  id="username"
-                  type="text"
-                  label="Email"
-                  placeholder=""
-                  {...username}
-                />
-                <FieldGroup
-                  id="password"
-                  type="password"
-                  label="Password"
-                  placeholder=""
-                  {...password}
-                />
-                <Button bsStyle="primary">asdasdsadas</Button>
-              </form>
-            </Panel>
+            <Panel header="Simple Login"/>
+            <FormGroup controlId="username">
+              <ControlLabel>Usename</ControlLabel>
+              <FormControl
+               value={this.state.username}
+               onChange={(event: any) => this.handleChanges(event, "username")}
+              />
+            </FormGroup>
+            <FormGroup controlId="password">
+              <ControlLabel>Password</ControlLabel>
+              <FormControl
+               value={this.state.password}
+               onChange={(event: any) => this.handleChanges(event, "password")}
+              />
+            </FormGroup>
+            <Button onClick={() => this.handleSubmit(event)}>
+              {app.auth.state === "PENDING" ? "Logging In ..." : "Login"}
+            </Button>
           </Col>
         </Grid>
         <DevTools />
