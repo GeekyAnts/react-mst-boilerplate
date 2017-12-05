@@ -1,6 +1,5 @@
 import * as React from "react";
 import {
-  Navbar,
   Grid,
   Col,
   Panel,
@@ -126,14 +125,6 @@ class Home extends React.Component<Props, {}> {
     const editMode = !!(app!.auth!.user);
     return (
       <div>
-        <Navbar inverse={true} collapseOnSelect={true} staticTop={true}>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">MST TypeScript Boilerplate</a>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-        </Navbar>
         <Grid>
           <Col>
             <Panel header={editMode ? "Update Profile" : "Simple Register"}/>

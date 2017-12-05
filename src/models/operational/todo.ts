@@ -7,10 +7,18 @@ const TodoOperations = types.model("TodoOperations")
 .actions((untypedSelf) => {
   const self = untypedSelf as typeof App.Type;
   return {
-    onClickTodo(todo: typeof TodoModel.Type) {
+    viewTodo(todo: typeof TodoModel.Type) {
       self.todo.selectTodo(todo);
       // Redirects here
-      history.push("/todoDetails/" + todo.id);
+      history.push("/todos/" + todo.id);
+    },
+    async addTodo(payload: any) {
+      try {
+        await self.todo.addTodo(payload);
+        history.goBack();
+      } catch (e) {
+        console.error(e);
+      }
     }
   };
 });

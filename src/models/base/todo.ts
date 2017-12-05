@@ -2,12 +2,13 @@ import { types } from  "mobx-state-tree";
 import AsyncModel from "./async";
 import TodoService from "../../services/Todo";
 
-
 const TodoModel = types.compose(
   types.model("Todo", {
     name: types.string,
     id: types.identifier(types.number),
     isCompleted: types.optional(types.boolean, false),
+    place: types.optional(types.string, ""),
+    description: types.optional(types.string, "")
   }), AsyncModel).actions(untypedSelf => {
     const self = untypedSelf as typeof TodoModel.Type;
     return {

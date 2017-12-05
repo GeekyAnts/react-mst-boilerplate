@@ -1,20 +1,16 @@
 import * as React from "react";
 import {
   Grid,
-  Col,
   Panel,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  Button,
   ListGroup,
-  ListGroupItem
+  ListGroupItem,
+  Button
   // HelpBlock,
 } from "react-bootstrap";
 import DevTools from "mobx-react-devtools";
 
 import { observer, inject } from "mobx-react";
-import Path from "../../constants/routes";
+import { Urls, appendId } from "../../constants/routes";
 import App from "../../models";
 
 interface State {
@@ -48,48 +44,45 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
     const { app } = this.props;
     app!.todo.getAll();
   }
-  logout() {
-    const { app } = this.props;
-    app!.logout(app!.auth!.user!.token);
-  }
-  update() {
+  navigateTo(path: string, id?: string|number) {
     const { history } = this.props;
-    history.push(Path.user.update);
+    if (id) {
+      history.push(appendId(path, id));
+    } else {
+      history.push(path);
+    }
+  }
+  edit(item: any) {
+    this.navigateTo(Urls.todo.update, item.id);
+  }
+  delete(item: any) {
+  }
+  view(item: any) {
+    const { app } = this.props;
+    app!.viewTodo(item);
+  }
+  create() {
+    this.navigateTo(Urls.todo.create);
   }
   render() {
     const { app } = this.props;
     return (
       <div>
         <Grid>
-          <p>Welcome to dashboard {app!.auth.user && app!.auth.user!.name}</p>
-          <p>Address: {app!.auth.user && app!.auth.user!.address.city}, 
-          {app!.auth.user && app!.auth.user!.address.country}</p>
-          <p>Gender: {app!.auth.user && app!.auth.user!.gender}</p>
-          <Button bsStyle="danger" onClick={() => this.logout()}>
-            {app!.auth.loading ? "Logging Out ..." : "Logout"}
-          </Button>
-          <Button onClick={() => this.update()}>Update</Button>
-          <Col>
-            <FormGroup controlId="username">
-              <ControlLabel>AddTodo</ControlLabel>
-              <FormControl
-                value={this.state.inputString}
-                onChange={(event: any) => this.handleChanges(event)}
-                onKeyDown={(event) => this.handleSubmit(event)}
-              />
-            </FormGroup>
-          </Col>
-        </Grid>
-        <Grid>
-          <Panel header="Todo List"/>
+          <Panel header="Todo List">
+            <Button onClick={() => this.create()}>Create</Button>
+          </Panel>
           {app!.todo.loading ?
             <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
              <ListGroup>
           {
             app!.todo.todos.map((item: any, index: number) => 
-            <ListGroupItem onClick={() => app!.viewTodo(item)} key={index}>
+            <ListGroupItem  key={index}>
               <div>
                 <p>{item.name}</p>
+                <Button onClick={() => this.edit(item)}>Edit</Button>
+                <Button onClick={() => this.view(item)}>View</Button>
+                <Button bsStyle="danger" onClick={() => this.delete(item)}>Delete</Button>
               </div>
             </ListGroupItem>)
           }

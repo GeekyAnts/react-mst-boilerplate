@@ -12,7 +12,7 @@ interface State {
 }
 @inject("todo")
 @observer
-export default class TodoDetails extends React.Component<{todo?:any, match?:any}, State> {
+export default class TodoView extends React.Component<{todo?:any, match?:any}, State> {
   constructor(props: any) {
     super(props);
     this.state = {

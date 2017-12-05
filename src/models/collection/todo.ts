@@ -27,6 +27,7 @@ const TodoCollection = types.compose(types.model({
                 self.finish();
             } catch (e) {
                 self.finishWithError();
+                console.error(e);
             }
         },
         async getAll() {
