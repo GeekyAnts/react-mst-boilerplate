@@ -1,9 +1,8 @@
 import { types } from  "mobx-state-tree";
-import UserModel from "./user";
-import AsyncModel from "./async";
+import { UserModel, AsyncModel } from "../base";
 import AuthService from "../../services/Auth";
 import DbService from "../../services/Db";
-import { RegisterUser, UpdateUser } from "../../interfaces/user";
+import { RegisterUser, UpdateUser } from "../../types/user";
 import keys from "../../constants/localStorage";
 
 const AuthModel = types.compose(

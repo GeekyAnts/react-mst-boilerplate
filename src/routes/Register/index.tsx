@@ -13,16 +13,23 @@ import {
 } from "react-bootstrap";
 import DevTools from "mobx-react-devtools";
 import { observer, inject } from "mobx-react";
-import { FormBuilder, Validators, reactiveForm, AbstractControl, FormGroup as Group } from "react-reactive-form";
+import { 
+  FormBuilder, 
+  Validators, 
+  reactiveForm, 
+  AbstractControl, 
+  FormGroup as Group,
+  FormProps,
+} from "react-reactive-form";
 
 interface Props {
-    name: any,
-    password: any,
-    confirm_password: any,
-    address: any,
-    gender: any, 
-    app: any,
-    terms: any,
+    name: FormProps;
+    password: FormProps;
+    confirm_password: FormProps;
+    address: FormProps;
+    gender: FormProps; 
+    terms: FormProps;
+    app: any;
 }
 
 function asyncValidator(control: AbstractControl) {
@@ -81,17 +88,7 @@ class Home extends React.Component<Props, {}> {
     event.preventDefault();
   }
   handleReset() {
-    registerForm.reset({
-      name: "",
-      address: {
-        city: "",
-        country: "us"
-      },
-      password: "",
-      confirm_password: "",
-      gender: "male",
-      terms: false,
-    });
+    registerForm.reset();
     registerForm.get("name").enable();
     registerForm.get("password").enable();
     registerForm.get("confirm_password").enable();

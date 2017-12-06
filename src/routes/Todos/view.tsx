@@ -1,36 +1,55 @@
 import * as React from "react";
 import {
   Button,
-  // HelpBlock,
+  Grid,
+  Col,
+  Panel,
+  ListGroup,
+  ListGroupItem
 } from "react-bootstrap";
 import DevTools from "mobx-react-devtools";
-
+import App from "../../models";
 import { observer, inject } from "mobx-react";
+import Paths from "../../constants/routes";
 
-interface State {
-  inputString: string;
-}
-@inject("todo")
+@inject("app")
 @observer
-export default class TodoView extends React.Component<{todo?:any, match?:any}, State> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      inputString: ""
-    };
+export default class TodoView extends React.Component<{app?: typeof App.Type, match?:any}, {}> {
+  edit(id: string) {
+    if (id) {
+      const { app } = this.props;
+      app!.navigateTo(Paths.todo.update, id);
+    }
   }
   render() {
-    const { todo } = this.props;
-    const todoItem = todo.getTodo(this.props.match.params.todoId);
+    const { app } = this.props;
+    const todoItem = app!.todo.getTodo(this.props.match.params.id);
     return ( 
       <div>
-        <p>Todo Name: {todoItem!.name}</p>
-        <p>Completed: {todoItem!.isCompleted.toString()}</p>
-        <Button onClick={() => {todoItem.update({ name: "Updated", isCompleted: false }); }}>
-          Update
-          {todoItem.loading ?
+        <Grid>
+          <Col>
+            <Panel header="Todo Details"/>
+          </Col>
+          <Button onClick={() => {this.edit(todoItem.id); }}>
+          Edit
+          {todoItem && todoItem.loading ?
             <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
         </Button>
+        </Grid>
+        <ListGroup>
+          <ListGroupItem>
+              <p>Todo Name: {todoItem && todoItem.name}</p>
+          </ListGroupItem>
+          <ListGroupItem>
+              <p>Completed: {todoItem && todoItem.isCompleted.toString()}</p>
+          </ListGroupItem>
+          <ListGroupItem>
+              <p>Description: {todoItem && todoItem.description || "None"}</p>
+          </ListGroupItem>
+          <ListGroupItem>
+              <p>Place: {todoItem && todoItem.place || "None"}</p>
+          </ListGroupItem>
+        </ListGroup>
         <DevTools />
       </div>
     );

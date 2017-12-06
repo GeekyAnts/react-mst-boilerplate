@@ -5,64 +5,33 @@ import {
   ListGroup,
   ListGroupItem,
   Button
-  // HelpBlock,
 } from "react-bootstrap";
 import DevTools from "mobx-react-devtools";
-
 import { observer, inject } from "mobx-react";
-import { Urls, appendId } from "../../constants/routes";
+import { Urls } from "../../constants/routes";
+import { TodoModel } from "../../models/base";
 import App from "../../models";
 
-interface State {
-  inputString: string;
-}
 @inject("app")
 @observer
-export default class Dashboard extends React.Component<{app?: typeof App.Type, history?: any}, State> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      inputString: ""
-    };
-  }
-  handleSubmit= (e: any) => {
-    if (e.which === 13) {
-      const { app } = this.props;
-      app!.todo.create(this.state.inputString);
-      this.setState({
-        inputString: "",
-      });
-    }
-  }
-  handleChanges = (event: any) => {
-    this.setState({
-      inputString: event.target.value
-    });
-    // event.preventDefault();
-  }
+export default class Dashboard extends React.Component<{app?: typeof App.Type, history?: any}, {}> {
   componentDidMount() {
     const { app } = this.props;
     app!.todo.getAll();
   }
-  navigateTo(path: string, id?: string|number) {
-    const { history } = this.props;
-    if (id) {
-      history.push(appendId(path, id));
-    } else {
-      history.push(path);
-    }
-  }
-  edit(item: any) {
-    this.navigateTo(Urls.todo.update, item.id);
-  }
-  delete(item: any) {
-  }
-  view(item: any) {
+  edit(item: typeof TodoModel.Type) {
     const { app } = this.props;
-    app!.viewTodo(item);
+    app!.navigateTo(Urls.todo.update, item.id);
+  }
+  delete(item: typeof TodoModel.Type) {
+  }
+  view(item: typeof TodoModel.Type) {
+    const { app } = this.props;
+    app!.viewTodo(item.id.toString());
   }
   create() {
-    this.navigateTo(Urls.todo.create);
+    const { app } = this.props;
+    app!.navigateTo(Urls.todo.create);
   }
   render() {
     const { app } = this.props;
@@ -76,7 +45,7 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
             <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
              <ListGroup>
           {
-            app!.todo.todos.map((item: any, index: number) => 
+            app!.todo.todos.map((item: typeof TodoModel.Type, index: number) => 
             <ListGroupItem  key={index}>
               <div>
                 <p>{item.name}</p>

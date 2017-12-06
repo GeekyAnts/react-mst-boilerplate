@@ -7,42 +7,59 @@ import {
   ControlLabel,
   FormControl,
   Button,
-//   ListGroup,
-//   ListGroupItem
-  // HelpBlock,
+  Checkbox,
 } from "react-bootstrap";
-// import DevTools from "mobx-react-devtools";
 
 import { observer, inject } from "mobx-react";
-import { FormBuilder, Validators, reactiveForm } from "react-reactive-form";
-// import Path from "../../constants/routes";
+import { FormBuilder, Validators, reactiveForm, FormProps } from "react-reactive-form";
+import { TodoModel } from "../../models/base";
 import App from "../../models";
 
 interface Props {
     app?: typeof App.Type;
-    name: any,
-    place: any,
-    description: any,
+    name: FormProps;
+    place: FormProps;
+    isCompleted: FormProps;
+    description: FormProps;
     history?: any;
+    match: any;
 }
-
 const fb = new FormBuilder();
 const todoForm = fb.group({
     name: ["", Validators.required],
     place: ["bangalore"],
     description: [""],
+    isCompleted: false,
 });
 @inject("app")
 @observer
 class TodoForm extends React.Component<Props, {}> {
-    addTodo() {
+    handleSubmit(todoItem: typeof TodoModel.Type) {
         const formValues = todoForm.value;
         const { app } = this.props;
-        app!.addTodo(formValues);
+        const editMode = !!(todoItem);
+        if (editMode) {
+            app!.updateTodo(todoItem.id, formValues);
+        } else {
+            app!.addTodo(formValues);
+        }
+    }
+    componentDidMount() {
+        const { match, app } = this.props; 
+        const todoItem = app!.todo.getTodo(match.params.id);
+        if (todoItem) {
+            todoForm.setValue({
+                name: todoItem.name,
+                place: todoItem.place,
+                description: todoItem.description,
+                isCompleted: todoItem.isCompleted
+            });
+        }
     }
     render() {
-        const { app, name, place, description } = this.props;
-        const editMode = !!(app!.auth!.user);
+        const { app, name, place, description, match, isCompleted } = this.props;
+        const todoItem = app!.todo.getTodo(match.params.id);
+        const editMode = !!(todoItem);
         return (
             <div>
                 <Grid>
@@ -63,7 +80,17 @@ class TodoForm extends React.Component<Props, {}> {
                         <ControlLabel>Description</ControlLabel>
                         <FormControl type="description" {...description.handler()}/>
                     </FormGroup>
-                    <Button bsStyle="primary" onClick={() => this.addTodo()}>Add</Button>
+                    {editMode && <FormGroup>
+                        <ControlLabel>Mark as Completed</ControlLabel>
+                        <Checkbox {...isCompleted.handler("checkbox")}/>
+                    </FormGroup>}
+                    <Button 
+                        disabled={todoForm.invalid || todoForm.pristine} 
+                        bsStyle="primary" 
+                        onClick={() => this.handleSubmit(todoItem)}
+                    >
+                        {editMode ? "Edit" : "Add"}
+                    </Button>
                     </Col>
                 </Grid>
             </div>

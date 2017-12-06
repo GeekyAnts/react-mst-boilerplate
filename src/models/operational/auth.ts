@@ -1,6 +1,6 @@
 import { types } from  "mobx-state-tree";
 import { history } from "../../routes";
-import { RegisterUser, UpdateUser } from "../../interfaces/user";
+import { RegisterUser, UpdateUser } from "../../types/user";
 import Path from "../../constants/routes";
 import App from "../../models";
 

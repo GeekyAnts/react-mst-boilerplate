@@ -12,7 +12,7 @@ import {
 import DevTools from "mobx-react-devtools";
 import Path from "../../constants/routes";
 import { observer, inject } from "mobx-react";
-import { FormBuilder, Validators, reactiveForm, AbstractControl } from "react-reactive-form";
+import { FormBuilder, Validators, reactiveForm, AbstractControl, FormProps } from "react-reactive-form";
 
 function asyncValidator(control: AbstractControl) {
     return fetch("https://dog.ceo/api/breed/hound/images")
@@ -34,10 +34,9 @@ const loginForm = fb.group({
   password: ["", Validators.required],
 });
 interface Props {
-  username: any,
-  password: any,
-  history: any,
-  app: any,
+  username: FormProps;
+  password: FormProps;
+  app: any;
 }
 @inject("app")
 @observer
@@ -49,13 +48,10 @@ class Home extends React.Component<Props, {}> {
     event.preventDefault();
   }
  componentWillUnmount() {
-   loginForm.reset({
-     username: "",
-     password: ""
-   });
+   loginForm.reset();
  }
   render() {
-    const { app, username, password, history } = this.props;
+    const { app, username, password } = this.props;
     return (
       <div>
         <Grid>
@@ -83,7 +79,7 @@ class Home extends React.Component<Props, {}> {
               <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
               {app.auth.loading ? "Logging In ..." : "Login"}
             </Button>
-            <Button onClick={() => history.push(Path.user.register)}>
+            <Button onClick={() => app!.navigateTo(Path.user.register)}>
               Register
             </Button>
           </Col>

@@ -1,29 +1,32 @@
+import { TodoPayload } from "../../types/todo";
 
 const mockedTodos = [
     {
         name: "Get Things Done 1",
-        id: 0,
+        id: "0",
         isCompleted: false,
     },
     {
         name: "Get Things Done 2",
-        id: 1,
+        id: "1",
         isCompleted: false,
     },
     {
         name: "Get Things Done 3",
-        id: 2,
+        id: "2",
         isCompleted: true,
     }
 ];
-function createTodo(name: string): Promise<object> {
+function createTodo(payload: any): Promise<object> {
     return new Promise((resolve, reject) => { 
         setTimeout(() => {
             try {
                 return resolve({
-                    name: name,
-                    id: Math.random(),
+                    id: Math.random().toString(),
                     isCompleted: false,
+                    name: payload.name,
+                    place: payload.place,
+                    description: payload.description
                 });
             } catch (e) {
                 return reject(e);
@@ -42,14 +45,15 @@ function deleteTodo(id: number): Promise<number|string> {
         }, 2000);
     });
 }
-function updateTodo(id: number, data: any): Promise<object> {
+function updateTodo(id: number|string, payload: TodoPayload): Promise<TodoPayload> {
     return new Promise((resolve, reject) => { 
         setTimeout(() => {
             try {
                 return resolve({
-                    id,
-                    name: data.name,
-                    isCompleted: data.isCompleted
+                    isCompleted: payload.isCompleted,
+                    name: payload.name,
+                    place: payload.place,
+                    description: payload.description
                 });
             } catch (e) {
                 return reject(e);

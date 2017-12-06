@@ -11,8 +11,8 @@ const Todos = ({ match }: { match: any}) => {
             <Switch>
                 <Route exact={true} path={Paths.todo.create} component={TodoForm} />
                 <Route exact={true} path={Paths.todo.update} component={TodoForm} />
-                <Route exact={true} path="/todos/:todoId" component={TodoView} />
-                <Route exact={true} path="/todos" component={TodoList} />
+                <Route exact={true} path={Paths.todo.todo} component={TodoView} />
+                <Route exact={true} path={Paths.todo.todos} component={TodoList} />
             </Switch>
         </div>
     );

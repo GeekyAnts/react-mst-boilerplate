@@ -1,6 +1,5 @@
 export function appendId(path: string, id: string|number ) {
-    const splitById = path.split(":");
-    return `${splitById[0]}/${id}`;
+    return path.replace(":id", id.toString());
 }
 export const Urls = {
     user: {
@@ -9,13 +8,13 @@ export const Urls = {
         update: "/update",
     },
     todos: {
-        detail: "/todoDetails/:todoId"
+        detail: "/todoDetails/:id"
     },
     todo: {
         todos: "/todos",
-        todo: "/todos/:todoId",
+        todo: "/todos/:id",
         create: "/todos/create",
-        update: "/todos/update:todoId",
+        update: "/todos/:id/update",
     }
 };
 export default Urls;

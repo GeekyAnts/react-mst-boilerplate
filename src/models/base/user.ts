@@ -1,5 +1,5 @@
 import { types } from  "mobx-state-tree";
-import { UpdateUser } from "../../interfaces/user";
+import { UpdateUser } from "../../types/user";
 
 const UserModel = types.model("User", {
     name: types.string,

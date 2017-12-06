@@ -1,4 +1,4 @@
-import { RegisterUser, UpdateUser } from "../../interfaces/user";
+import { RegisterUser, UpdateUser } from "../../types/user";
 
 function login(username: string, password: string): Promise<any> {
     return new Promise((resolve, reject) => { 

@@ -3,15 +3,15 @@ import {
     TodoOperations,
     AuthOperations
 } from "./operational";
-import { AuthModel } from "./base";
-import { TodoCollection } from "./collection";
+import { Todo, Auth } from "./collection";
 import DbService from "../services/Db";
 import keys from "../constants/localStorage";
+import { appendId } from "../constants/routes";
 import { history } from "../routes";
 
 const Store = types.model("Store", {
-    auth: AuthModel,
-    todo: TodoCollection
+    auth: Auth,
+    todo: Todo
 });
 
 const App = types.compose(AuthOperations, TodoOperations, Store)
@@ -25,6 +25,13 @@ const App = types.compose(AuthOperations, TodoOperations, Store)
                 history.replace("/dashboard");
             }
         },
+        navigateTo(path: string, id?: string|number) {
+            if (id) {
+              history.push(appendId(path, id));
+            } else {
+              history.push(path);
+            }
+        }
     };
 });
 
