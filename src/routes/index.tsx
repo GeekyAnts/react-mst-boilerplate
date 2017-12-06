@@ -8,6 +8,7 @@ import {
 import { createBrowserHistory } from "history";
 import { inject, observer } from "mobx-react";
 import Paths from "../constants/routes";
+import App from "../models";
 
 export const history = createBrowserHistory();
 
@@ -19,10 +20,10 @@ import Todos from "./Todos";
 
 @inject("app")
 @observer
-export default class extends React.Component<{app?: any}> {
+export default class extends React.Component<{app?: typeof App.Type}> {
   render() { 
     const { app } = this.props;
-    const canAccess = !!app.auth.user;
+    const canAccess = !!app!.auth.user;
     return (
       <Router history={history}>
         <div>

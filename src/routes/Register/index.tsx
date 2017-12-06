@@ -21,6 +21,7 @@ import {
   FormGroup as Group,
   FormProps,
 } from "react-reactive-form";
+import App from "../../models";
 
 interface Props {
     name: FormProps;
@@ -29,7 +30,7 @@ interface Props {
     address: FormProps;
     gender: FormProps; 
     terms: FormProps;
-    app: any;
+    app: typeof App.Type;
 }
 
 function asyncValidator(control: AbstractControl) {
