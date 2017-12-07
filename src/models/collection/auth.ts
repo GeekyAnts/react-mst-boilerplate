@@ -13,12 +13,7 @@ const AuthModel = types.compose(
     const self = untypedSelf as typeof AuthModel.Type;
     return {
       createUser(userData: typeof UserModel.Type) {
-        self.user = UserModel.create({
-          name: userData.name,
-          address: userData.address,
-          token: userData.token,
-          gender: userData.gender
-        });
+        self.user = UserModel.create(userData);
         DbService.store(keys.user, self.user);
       },
       destroyUser() {

@@ -1,4 +1,4 @@
-import { TodoPayload } from "../../types/todo";
+import { CreateTodo, UpdateTodo } from "../../types/todo";
 
 const mockedTodos = [
     {
@@ -17,7 +17,7 @@ const mockedTodos = [
         isCompleted: true,
     }
 ];
-function createTodo(payload: any): Promise<object> {
+function createTodo(payload: CreateTodo): Promise<object> {
     return new Promise((resolve, reject) => { 
         setTimeout(() => {
             try {
@@ -45,7 +45,7 @@ function deleteTodo(id: number): Promise<number|string> {
         }, 2000);
     });
 }
-function updateTodo(id: number|string, payload: TodoPayload): Promise<TodoPayload> {
+function updateTodo(id: number|string, payload: UpdateTodo): Promise<object> {
     return new Promise((resolve, reject) => { 
         setTimeout(() => {
             try {

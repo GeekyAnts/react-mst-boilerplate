@@ -1,12 +1,7 @@
 import { types } from  "mobx-state-tree";
+import { UpdateTodo } from "../../types/todo";
 import AsyncModel from "./async";
 
-type TodoPayload = {
-  name: string,
-  isCompleted?: boolean,
-  description?: string,
-  place?: string,
-};
 const TodoModel = types.compose(
   types.model("Todo", {
     name: types.string,
@@ -17,7 +12,7 @@ const TodoModel = types.compose(
   }), AsyncModel).actions(untypedSelf => {
     const self = untypedSelf as typeof TodoModel.Type;
     return {
-      update(payload: TodoPayload) {
+      update(payload: UpdateTodo) {
         self.name = payload.name;
         if (payload.isCompleted !== undefined) {
           self.isCompleted = payload.isCompleted;

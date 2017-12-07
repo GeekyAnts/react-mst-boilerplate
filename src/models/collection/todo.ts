@@ -1,7 +1,7 @@
 import { types } from  "mobx-state-tree";
 import { TodoModel, AsyncModel } from "../base";
 import TodoService from "../../services/Todo";
-import { TodoPayload } from "../../types/todo";
+import { CreateTodo, UpdateTodo } from "../../types/todo";
 
 const TodoCollection = types.compose(types.model({
     todos: types.array(TodoModel),
@@ -16,22 +16,23 @@ const TodoCollection = types.compose(types.model({
                 self.addTodo(todo);
             });
         },
-        async create(payload: TodoPayload) {
+        async create(payload: CreateTodo) {
             self.init();
             try {
-                const res = await TodoService.createTodo(payload);
-                self.addTodo(res as typeof TodoModel.Type);
+                const res = await TodoService.createTodo(payload) as typeof TodoModel.Type;
+                self.addTodo(res);
                 self.finish();
+                return res;
             } catch (e) {
                 self.finishWithError();
                 throw(e);
             }
         },
-        async update(id: number|string, payload: TodoPayload) {
+        async update(id: number|string, payload: UpdateTodo) {
             self.init();
             try {
                 const res = await TodoService.updateTodo(id, payload);
-                self.getTodo(id)!.update(res);
+                self.getTodo(id)!.update(res as UpdateTodo);
                 self.finish();
             } catch (e) {
                 self.finishWithError();

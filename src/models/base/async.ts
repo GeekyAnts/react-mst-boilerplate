@@ -7,7 +7,7 @@ const Async = types.model("Async", {
 }).actions(untypedSelf => {
     const self = untypedSelf as typeof Async.Type;
     return {
-        init(loadingMsg?: string) {
+        init() {
             self.loading = true;
         },
         finish() {
@@ -18,6 +18,9 @@ const Async = types.model("Async", {
             self.loading = false;
             self.loadingMsg = "";
             self.error = true;
+        },
+        setLoadingMsg(msg: string) {
+            self.loadingMsg = msg;
         }
     };
 });
