@@ -37,6 +37,7 @@ const AuthModel = types.compose(
           self.finish();
         } catch (e) {
           self.finishWithError();
+          throw(e);
         }
       },
       async logout(token: string) {
@@ -47,6 +48,7 @@ const AuthModel = types.compose(
           self.finish();
         } catch (e) {
           self.finishWithError();
+          throw(e);
         }
       },
       async register(userData: RegisterUser) {
@@ -57,6 +59,7 @@ const AuthModel = types.compose(
           self.finish();
         } catch (e) {
           self.finishWithError();
+          throw(e);
         }
       },
       async update(userData: UpdateUser) {
@@ -67,6 +70,7 @@ const AuthModel = types.compose(
           self.finish();
         } catch (e) {
           self.finishWithError();
+          throw(e);
         }
       }
     };

@@ -14,7 +14,7 @@ const AuthOperations = types.model("AuthOperations")
                 // Redirect to dashboard
                 history.push(Path.user.dashboard);
             } catch (e) {
-            
+                console.error(e);
             }
         },
         async logout(token: string) {
@@ -31,7 +31,7 @@ const AuthOperations = types.model("AuthOperations")
                 await self.auth.register(userData);
                 history.push(Path.user.dashboard);
             } catch (e) {
-            
+                console.error(e);
             }
         },
         async update(userData: UpdateUser) {

@@ -5,15 +5,11 @@ import { TodoPayload } from "../../types/todo";
 
 const TodoCollection = types.compose(types.model({
     todos: types.array(TodoModel),
-    selectedTodo: types.reference(TodoModel),
   }), AsyncModel).actions(untypedSelf => {
     const self = untypedSelf as typeof TodoCollection.Type;
     return {
         addTodo(todo: typeof TodoModel.Type) {
             self.todos.unshift(TodoModel.create(todo));
-        },
-        selectTodo(todo: typeof TodoModel.Type) {
-            self.selectedTodo = todo;
         },
         updateTodos(todoList: Array<Object>) {
             todoList.forEach((todo: typeof TodoModel.Type) => {
@@ -28,7 +24,7 @@ const TodoCollection = types.compose(types.model({
                 self.finish();
             } catch (e) {
                 self.finishWithError();
-                console.error(e);
+                throw(e);
             }
         },
         async update(id: number|string, payload: TodoPayload) {
@@ -39,7 +35,7 @@ const TodoCollection = types.compose(types.model({
                 self.finish();
             } catch (e) {
                 self.finishWithError();
-                console.error(e);
+                throw(e);
             }
         },
         async getAll() {
@@ -51,6 +47,7 @@ const TodoCollection = types.compose(types.model({
                 self.finish();
             } catch (e) {
                 self.finishWithError();
+                throw(e);
             }
         }
     };

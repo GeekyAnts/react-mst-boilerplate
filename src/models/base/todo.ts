@@ -27,8 +27,7 @@ const TodoModel = types.compose(
         } 
         if (payload.description) {
           self.description = payload.description;
-        } 
-
+        }
       }
   };
   });
