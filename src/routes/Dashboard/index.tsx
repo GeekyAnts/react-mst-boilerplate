@@ -6,6 +6,7 @@ import {
 import DevTools from "mobx-react-devtools";
 import { observer, inject } from "mobx-react";
 import Path from "../../constants/routes";
+import { FormattedMessage } from "react-intl";
 import App from "../../models";
 
 @inject("app")
@@ -24,6 +25,12 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
     return (
       <div>
         <Grid>
+        <FormattedMessage
+          id="welcome"
+          defaultMessage={`Hello, you have, plural,
+            one 
+            other`}
+        />
           <p>Welcome to dashboard {app!.auth.user && app!.auth.user!.name}</p>
           <p>Address: {app!.auth.user && app!.auth.user!.address.city}, 
           {app!.auth.user && app!.auth.user!.address.country}</p>

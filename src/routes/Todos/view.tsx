@@ -33,7 +33,7 @@ export default class TodoView extends React.Component<{app?: typeof App.Type, ma
           <Button onClick={() => {this.edit(todoItem.id); }}>
           Edit
           {todoItem && todoItem.loading ?
-            <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
+            <img style={{height: 20, width: 20 }} src={require("../../assets/loader.gif")}/> : null}
         </Button>
         </Grid>
         <ListGroup>

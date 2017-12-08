@@ -9,14 +9,13 @@ import { createBrowserHistory } from "history";
 import { inject, observer } from "mobx-react";
 import Paths from "../constants/routes";
 import App from "../models";
-
-export const history = createBrowserHistory();
-
 import Home from "./Home";
 import DashBoard from "./Dashboard";
 import Register from "./Register";
 import { Header, Footer } from "../components/layout";
 import Todos from "./Todos";
+
+export const history = createBrowserHistory();
 
 @inject("app")
 @observer

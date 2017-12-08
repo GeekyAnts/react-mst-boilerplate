@@ -28,6 +28,7 @@ const AuthModel = types.compose(
         self.init();
         try {
           const res = await AuthService.login(username, password);
+          console.log("this is reponse", res);
           self.createUser(res);
           self.finish();
         } catch (e) {

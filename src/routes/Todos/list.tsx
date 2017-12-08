@@ -42,7 +42,7 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
             <Button onClick={() => this.create()}>Create</Button>
           </Panel>
           {app!.todo.loading ?
-            <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
+            <img style={{height: 20, width: 20 }} src={require("../../assets/loader.gif")}/> : null}
              <ListGroup>
           {
             app!.todo.todos.map((item: typeof TodoModel.Type, index: number) => 

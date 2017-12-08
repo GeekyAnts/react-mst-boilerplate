@@ -61,7 +61,7 @@ class Home extends React.Component<Props, {}> {
             <FormGroup controlId="username">
               <ControlLabel>Username</ControlLabel>
               {username.pending ? 
-              <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
+              <img style={{height: 20, width: 20 }} src={require("../../assets/loader.gif")}/> : null}
               <FormControl {...username.handler()}/>
               <span style={{color: "red"}}>
                 {username.touched && username.hasError("required") && "Username is required"}
@@ -77,7 +77,7 @@ class Home extends React.Component<Props, {}> {
             </FormGroup>
             <Button disabled={loginForm.invalid} onClick={() => this.handleSubmit(event)}>
               {app.auth.loading ? 
-              <img style={{height: 20, width: 20 }} src={require("../../assests/loader.gif")}/> : null}
+              <img style={{height: 20, width: 20 }} src={require("../../assets/loader.gif")}/> : null}
               {app.auth.loading ? "Logging In ..." : "Login"}
             </Button>
             <Button onClick={() => app!.navigateTo(Path.user.register)}>
