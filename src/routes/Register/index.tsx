@@ -54,10 +54,11 @@ function checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: 
         let passwordInput = group.controls[passwordKey],
             passwordConfirmationInput = group.controls[passwordConfirmationKey];
         if (passwordInput.value !== passwordConfirmationInput.value) {
-            return {notEquivalent: true};
+          passwordConfirmationInput.setErrors({notEquivalent: true});
         } else {
-           return null;
+          passwordConfirmationInput.setErrors(null);
         }
+        return null;
     };
 }
 const fb = new FormBuilder();
