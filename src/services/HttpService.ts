@@ -11,7 +11,7 @@ export type Params = {
     // Url
     url: string;
     // Params to append in the url
-    urlParams?: {[key: string]: string};
+    urlParams?: {[key: string]: string|number|boolean|null};
     // Params
     params?: {[key: string]: string|number|boolean|null};
     // Query Params
@@ -24,16 +24,16 @@ export type Params = {
     files?: {[key: string]: string|object|null};
     callbackProcessor?: () => void;
 };
-function _replaceUrlParams(url: string, urlParams: {[key: string]: string}) {
+function _replaceUrlParams(url: string, urlParams: {[key: string]: string|number|boolean|null}) {
     const _urlParams = urlParams;
     return url.replace(/:(.*?)\//g, (rawUrl, urlParam) => {
       const value = _urlParams[urlParam];
       delete _urlParams[urlParam];
-      return rawUrl.replace(urlParam, value).replace(":", "");
+      return rawUrl.replace(urlParam, value!.toString()).replace(":", "");
     });
   }
   
-function _getUrl(url: string, urlParams?: {[key: string]: string}) {
+function _getUrl(url: string, urlParams?: {[key: string]: string|number|boolean|null}) {
     url = URLs[url];
     if (urlParams) {
         url = `${URLs[url]}/`;
