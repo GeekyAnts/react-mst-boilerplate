@@ -58,7 +58,7 @@ class TodoForm extends React.Component<Props, {}> {
     }
     render() {
         const { app, name, place, description, match, isCompleted } = this.props;
-        const todoItem = app!.todo.getTodo(match.params.id);
+        const todoItem = app!.todo.getTodo(match.params.todoId);
         const editMode = !!(todoItem);
         return (
             <div>

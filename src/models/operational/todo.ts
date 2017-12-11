@@ -8,7 +8,7 @@ const TodoOperations = types.model("TodoOperations")
   const self = untypedSelf as typeof App.Type;
   return {
     viewTodo(todoId: string) {
-      self.navigateTo(Paths.todo.todo, todoId);
+      self.navigateTo(Paths.todo.todo, { todoId });
     },
     async addTodo(payload: any) {
       try {

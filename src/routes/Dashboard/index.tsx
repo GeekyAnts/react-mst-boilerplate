@@ -26,10 +26,7 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
       <div>
         <Grid>
         <FormattedMessage
-          id="welcome"
-          defaultMessage={`Hello, you have, plural,
-            one 
-            other`}
+          id="app.welcome"
         />
           <p>Welcome to dashboard {app!.auth.user && app!.auth.user!.name}</p>
           <p>Address: {app!.auth.user && app!.auth.user!.address.city}, 

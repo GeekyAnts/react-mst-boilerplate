@@ -7,14 +7,11 @@ export const Urls = {
         register: "/register",
         update: "/update",
     },
-    todos: {
-        detail: "/todoDetails/:id"
-    },
     todo: {
         todos: "/todos",
-        todo: "/todos/:id",
+        todo: "/todos/:todoId",
         create: "/todos/create",
-        update: "/todos/:id/update",
+        update: "/todos/:todoId/update",
     }
 };
 export default Urls;

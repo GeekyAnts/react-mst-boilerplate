@@ -18,12 +18,12 @@ export default class TodoView extends React.Component<{app?: typeof App.Type, ma
   edit(id: string) {
     if (id) {
       const { app } = this.props;
-      app!.navigateTo(Paths.todo.update, id);
+      app!.navigateTo(Paths.todo.update, { todoId: id });
     }
   }
   render() {
     const { app } = this.props;
-    const todoItem = app!.todo.getTodo(this.props.match.params.id);
+    const todoItem = app!.todo.getTodo(this.props.match.params.todoId);
     return ( 
       <div>
         <Grid>

@@ -1,5 +1,5 @@
 // import * as _ from "lodash";
-import { URLs, API_HOST } from "../constants/urls";
+import { getUrl } from "../utils";
 
 const request = require("superagent");
 // const URLs = {};
@@ -24,23 +24,7 @@ export type Params = {
     files?: {[key: string]: string|object|null};
     callbackProcessor?: () => void;
 };
-function _replaceUrlParams(url: string, urlParams: {[key: string]: string|number|boolean|null}) {
-    const _urlParams = urlParams;
-    return url.replace(/:(.*?)\//g, (rawUrl, urlParam) => {
-      const value = _urlParams[urlParam];
-      delete _urlParams[urlParam];
-      return rawUrl.replace(urlParam, value!.toString()).replace(":", "");
-    });
-  }
-  
-function _getUrl(url: string, urlParams?: {[key: string]: string|number|boolean|null}) {
-    url = URLs[url];
-    if (urlParams) {
-        url = `${URLs[url]}/`;
-        url = _replaceUrlParams(url, urlParams);
-    }
-    return API_HOST + url;
-}
+
 function rejectWithAnError(error: any) {
     let err = null;
     if (error.response) {
@@ -72,7 +56,7 @@ function _callbackProcessor({ text }: {text: any}) {
 }
 function _doRequest(method: Methods, params: Params) {
     let req = null;
-    const url = _getUrl(params.url, params.urlParams);
+    const url = getUrl(params.url, params.urlParams);
     const requestData = params.params || {};
     const queryData = params.query || {};
     const headers = _getHeaders(params.headers, params.token);

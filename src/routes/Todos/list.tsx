@@ -21,7 +21,7 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
   }
   edit(item: typeof TodoModel.Type) {
     const { app } = this.props;
-    app!.navigateTo(Urls.todo.update, item.id);
+    app!.navigateTo(Urls.todo.update, { todoId: item.id });
   }
   delete(item: typeof TodoModel.Type) {
   }

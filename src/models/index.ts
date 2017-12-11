@@ -6,8 +6,11 @@ import {
 import { Todo, Auth } from "./collection";
 import DbService from "../services/Db";
 import keys from "../constants/localStorage";
-import { appendId } from "../constants/routes";
+import { Urls } from "../constants/routes";
+import { replaceUrlParams } from "../utils";
 import { history } from "../routes";
+
+export type Methods = "PUSH"|"REPLACE"|"BACK"|"FORWARD";
 
 const Store = types.model("Store", {
     auth: Auth,
@@ -22,14 +25,23 @@ const App = types.compose(AuthOperations, TodoOperations, Store)
             const user = DbService.get(keys.user);
             if (user) {
                 self.auth.createUser(user);
-                history.replace("/dashboard");
+                self.navigateTo(Urls.user.dashboard, {}, "REPLACE");
             }
         },
-        navigateTo(path: string, id?: string|number) {
-            if (id) {
-              history.push(appendId(path, id));
-            } else {
-              history.push(path);
+        navigateTo(url: string, urlParams?: {[key: string]: string|number|boolean|null}, method?: Methods) {
+            const path = replaceUrlParams(url, urlParams);
+            switch (method) {
+                case "REPLACE":
+                    history.replace(path);
+                    break;
+                case "BACK":
+                    history.goBack();
+                    break;
+                case "FORWARD":
+                    history.goForward();
+                    break;
+                default:
+                    history.push(path);
             }
         }
     };
