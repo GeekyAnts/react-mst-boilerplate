@@ -1,4 +1,4 @@
 {
-    "hello": "Hello French",
-    "welcome": "Welcome French"
+    "app.welcome": "Bienvenue !",
+    "app.greeting_message": "Salut {name}, ça va ?"
 }

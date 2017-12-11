@@ -22,16 +22,18 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
   }
   render() {
     const { app } = this.props;
+    const user = app!.auth!.user;
+    const username = user && user.name || "";
     return (
       <div>
         <Grid>
         <FormattedMessage
-          id="app.welcome"
+          id="app.greeting_message"
+          values={{name: username}}
         />
-          <p>Welcome to dashboard {app!.auth.user && app!.auth.user!.name}</p>
-          <p>Address: {app!.auth.user && app!.auth.user!.address.city}, 
-          {app!.auth.user && app!.auth.user!.address.country}</p>
-          <p>Gender: {app!.auth.user && app!.auth.user!.gender}</p>
+          <p>Address: {user && user!.address.city}, 
+          {user && user!.address.country}</p>
+          <p>Gender: {user && user!.gender}</p>
           <Button bsStyle="danger" onClick={() => this.logout()}>
             {app!.auth.loading ? "Logging Out ..." : "Logout"}
           </Button>

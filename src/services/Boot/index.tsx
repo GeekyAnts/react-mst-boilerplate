@@ -4,21 +4,17 @@ import { Provider } from "mobx-react";
 import { addLocaleData, IntlProvider } from "react-intl";
 let frLocaleData = require("react-intl/locale-data/fr");
 addLocaleData(frLocaleData);
-// import messages from "../../assets/i18n";
-// import fr from "react-intl/locale-data/fr";
+import messages from "../../assets/i18n";
 import Routes from "../../routes";
 import AppStore from "../../store";
-// import { addLocaleData } from "react-intl";
-// addLocaleData([...fr]);
+
+const locale = "fr";
+
 const i18nConfig = {
-  locale: "fr",
-  messages: {
-    "app.welcome": "Bienvenue !",
-    "app.greeting_message": "Salut {name}, ça va ?"
-  }
+  locale: locale,
+  messages: messages[locale]
 };
 
-// console.log("these are messages",)
 export default class Boot {
   constructor() {
     this.boot();
@@ -26,7 +22,7 @@ export default class Boot {
 
   boot(): any {
     ReactDOM.render(
-    <IntlProvider locale={i18nConfig.locale} messages={i18nConfig.messages}>
+    <IntlProvider {...i18nConfig}>
       <Provider {...AppStore}>
         <Routes />
       </Provider>

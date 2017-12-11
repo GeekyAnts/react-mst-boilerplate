@@ -20,6 +20,8 @@ import {
   AbstractControl, 
   FormGroup as Group,
   FormProps,
+  ValidatorFn,
+  ValidationErrors,
 } from "react-reactive-form";
 import App from "../../models";
 
@@ -47,20 +49,20 @@ function asyncValidator(control: AbstractControl) {
       return control.errors;
     });
 }
-function checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string) {
-    return (group: Group) => {
+function checkIfMatchingPasswords(passwordKey: string, passwordConfirmationKey: string): ValidatorFn {
+    return (group: Group): ValidationErrors|null => {
         let passwordInput = group.controls[passwordKey],
             passwordConfirmationInput = group.controls[passwordConfirmationKey];
         if (passwordInput.value !== passwordConfirmationInput.value) {
-            return passwordConfirmationInput.setErrors({notEquivalent: true});
+            return {notEquivalent: true};
         } else {
-          return passwordConfirmationInput.setErrors(null);
+           return null;
         }
     };
 }
 const fb = new FormBuilder();
 const registerForm = fb.group({
-  name: ["", Validators.required, asyncValidator],
+  name: ["", Validators.required, asyncValidator, "blur"],
   password: ["", [ Validators.required, Validators.minLength(8)]],
   confirm_password: ["", Validators.required],
   address: fb.group({
@@ -69,7 +71,7 @@ const registerForm = fb.group({
   }),
   gender: ["male"],
   terms: [false, Validators.requiredTrue],
-}, { validator: checkIfMatchingPasswords("password", "confirm_password") });
+}, { validators: checkIfMatchingPasswords("password", "confirm_password") });
 
 @inject("app")
 @observer
