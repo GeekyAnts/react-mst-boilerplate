@@ -40,16 +40,6 @@ function errorCallback(error: any) {
         .catch(status =>
             Promise.reject(status));
 }
-function _getHeaders(headers?: {[key: string]: string}, token?: string) {
-    if (token) {
-        const _headers = {
-            Authorization: `Token ${token}`,
-            ...headers,
-        };
-        return _headers;
-    }
-    return headers || {};
-}
 
 function _callbackProcessor({ text }: {text: any}) {
     return JSON.parse(text);
@@ -59,7 +49,7 @@ function _doRequest(method: Methods, params: Params) {
     const url = getUrl(params.url, params.urlParams);
     const requestData = params.params || {};
     const queryData = params.query || {};
-    const headers = _getHeaders(params.headers, params.token);
+    const headers = params.headers || {};
     const callbackProcessor = params.callbackProcessor || _callbackProcessor;
     switch (method) {
         case "GET":

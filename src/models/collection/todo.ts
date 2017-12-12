@@ -1,8 +1,25 @@
 import { types } from  "mobx-state-tree";
 import { TodoModel, AsyncModel } from "../base";
-import TodoService from "../../services/Todo";
+import HttpService from "../../services/HttpService";
 import { CreateTodo, UpdateTodo } from "../../types/todo";
-
+// Mocked Todos
+const mockedTodos = [
+    {
+        name: "Get Things Done 1",
+        id: "0",
+        isCompleted: false,
+    },
+    {
+        name: "Get Things Done 2",
+        id: "1",
+        isCompleted: false,
+    },
+    {
+        name: "Get Things Done 3",
+        id: "2",
+        isCompleted: true,
+    }
+];
 const TodoCollection = types.compose(types.model({
     todos: types.array(TodoModel),
   }), AsyncModel).actions(untypedSelf => {
@@ -19,8 +36,17 @@ const TodoCollection = types.compose(types.model({
         async create(payload: CreateTodo) {
             self.init();
             try {
-                const res = await TodoService.createTodo(payload) as typeof TodoModel.Type;
-                self.addTodo(res);
+                // Mocked api
+                await HttpService.doGet({ url: "allBreads" });
+                // Mocked Response
+                const res = {
+                    id: Math.random().toString(),
+                    isCompleted: false,
+                    name: payload.name,
+                    place: payload.place,
+                    description: payload.description
+                };
+                self.addTodo(res as typeof TodoModel.Type);
                 self.finish();
                 return res;
             } catch (e) {
@@ -31,7 +57,15 @@ const TodoCollection = types.compose(types.model({
         async update(id: number|string, payload: UpdateTodo) {
             self.init();
             try {
-                const res = await TodoService.updateTodo(id, payload);
+                // Mocked api
+                await HttpService.doGet({ url: "allBreads" });
+                // Mocked Response
+                const res = {
+                    isCompleted: payload.isCompleted,
+                    name: payload.name,
+                    place: payload.place,
+                    description: payload.description
+                };
                 self.getTodo(id)!.update(res as UpdateTodo);
                 self.finish();
             } catch (e) {
@@ -43,8 +77,10 @@ const TodoCollection = types.compose(types.model({
             self.init();
             self.todos.clear();
             try {
-                const res = await TodoService.getAllTodos();
-                self.updateTodos(res);
+                // Mocked api
+                await HttpService.doGet({ url: "allBreads" });
+                // Mocked Response
+                self.updateTodos(mockedTodos);
                 self.finish();
             } catch (e) {
                 self.finishWithError();
