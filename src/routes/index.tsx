@@ -11,7 +11,7 @@ import Home from "./Home";
 import DashBoard from "./Dashboard";
 import Register from "./Register";
 import { Header, Footer } from "../components/layout";
-import { LoginContainer } from "./Auth";
+import { AuthGuard } from "./Guards";
 import Todos from "./Todos";
 
 export const history = createBrowserHistory();
@@ -28,11 +28,11 @@ export default class extends React.Component {
             <Route  exact={true} path="/" component={Home} />
             <Route exact={true} path={Paths.user.register} component={Register} />
             {/* { Routes protected by user authentication } */}
-            <LoginContainer>
+            <AuthGuard>
               <Route path={Paths.todo.todos} component={Todos} />
               <Route exact={true} path={Paths.user.update} component={Register} />
               <Route exact={true} path={Paths.user.dashboard} component={DashBoard} />
-            </LoginContainer>
+            </AuthGuard>
           </Switch>
           <Footer/>
         </div>

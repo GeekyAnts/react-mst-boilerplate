@@ -4,7 +4,7 @@ import App from "../../models";
 
 @inject("app")
 @observer
-export default class LoginContainer extends React.Component<{app?: typeof App.Type}, {}> {
+export default class Auth extends React.Component<{app?: typeof App.Type}, {}> {
     componentDidMount() {
         const { app } = this.props;
         const isLoggedIn = !!app!.auth.user;
