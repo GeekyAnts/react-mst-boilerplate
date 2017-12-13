@@ -46,7 +46,7 @@ class TodoForm extends React.Component<Props, {}> {
     }
     componentDidMount() {
         const { match, app } = this.props; 
-        const todoItem = app!.todo.getTodo(match.params.id);
+        const todoItem = app!.todo.getTodo(match.params.todoId);
         if (todoItem) {
             todoForm.setValue({
                 name: todoItem.name,
