@@ -7,7 +7,7 @@ import DevTools from "mobx-react-devtools";
 import { observer, inject } from "mobx-react";
 import Path from "../../constants/routes";
 import { FormattedMessage } from "react-intl";
-import App from "../../models";
+import App from "../../modules";
 
 @inject("app")
 @observer

@@ -13,7 +13,7 @@ import DevTools from "mobx-react-devtools";
 import Path from "../../constants/routes";
 import { observer, inject } from "mobx-react";
 import { FormBuilder, Validators, reactiveForm, AbstractControl, FormProps } from "react-reactive-form";
-import App from "../../models";
+import App from "../../modules";
 
 function asyncValidator(control: AbstractControl) {
     return fetch("https://dog.ceo/api/breed/hound/images")
@@ -31,7 +31,7 @@ function asyncValidator(control: AbstractControl) {
 }
 const fb = new FormBuilder();
 const loginForm = fb.group({
-  username: ["", Validators.required, asyncValidator],
+  username: ["", Validators.required, asyncValidator, "blur"],
   password: ["", Validators.required],
 });
 interface Props {

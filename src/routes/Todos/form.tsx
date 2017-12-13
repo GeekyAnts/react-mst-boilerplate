@@ -12,8 +12,8 @@ import {
 
 import { observer, inject } from "mobx-react";
 import { FormBuilder, Validators, reactiveForm, FormProps } from "react-reactive-form";
-import { TodoModel } from "../../models/base";
-import App from "../../models";
+import { TodoModel } from "../../modules/base";
+import App from "../../modules";
 
 interface Props {
     app?: typeof App.Type;
@@ -56,6 +56,9 @@ class TodoForm extends React.Component<Props, {}> {
             });
         }
     }
+    componentWillUnmount() {
+        todoForm.reset();
+      }
     render() {
         const { app, name, place, description, match, isCompleted } = this.props;
         const todoItem = app!.todo.getTodo(match.params.todoId);

@@ -23,7 +23,7 @@ import {
   ValidatorFn,
   ValidationErrors,
 } from "react-reactive-form";
-import App from "../../models";
+import App from "../../modules";
 
 interface Props {
     name: FormProps;

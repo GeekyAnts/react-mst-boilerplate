@@ -8,7 +8,7 @@ import {
   ListGroupItem
 } from "react-bootstrap";
 import DevTools from "mobx-react-devtools";
-import App from "../../models";
+import App from "../../modules";
 import { observer, inject } from "mobx-react";
 import Paths from "../../constants/routes";
 

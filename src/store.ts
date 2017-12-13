@@ -1,4 +1,4 @@
-import AppStore from "./models"; 
+import AppStore from "./modules"; 
 
 const initialState = {
     auth: {user: null},

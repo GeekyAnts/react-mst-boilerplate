@@ -1,5 +1,5 @@
 import { types } from  "mobx-state-tree";
-import App from "../../models";
+import App from "../../modules";
 import Paths from "../../constants/routes";
 // import { TodoModel } from "../base";
 

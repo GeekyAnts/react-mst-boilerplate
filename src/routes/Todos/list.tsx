@@ -9,8 +9,8 @@ import {
 import DevTools from "mobx-react-devtools";
 import { observer, inject } from "mobx-react";
 import { Urls } from "../../constants/routes";
-import { TodoModel } from "../../models/base";
-import App from "../../models";
+import { TodoModel } from "../../modules/base";
+import App from "../../modules";
 
 @inject("app")
 @observer
