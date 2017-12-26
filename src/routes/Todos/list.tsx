@@ -4,7 +4,8 @@ import {
   Panel,
   ListGroup,
   ListGroupItem,
-  Button
+  Button,
+  Pagination,
 } from "react-bootstrap";
 import DevTools from "mobx-react-devtools";
 import { observer, inject } from "mobx-react";
@@ -17,7 +18,7 @@ import App from "../../modules";
 export default class Dashboard extends React.Component<{app?: typeof App.Type, history?: any}, {}> {
   componentDidMount() {
     const { app } = this.props;
-    app!.todo.getAll();
+    app!.todo.getAll(app!.todo.currentFilter.start);
   }
   edit(item: typeof TodoModel.Type) {
     const { app } = this.props;
@@ -32,6 +33,10 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
   create() {
     const { app } = this.props;
     app!.navigateTo(Urls.todo.create);
+  }
+  handleSelect(eventKey: number) {
+    const { app } = this.props;
+    app!.todo.getAll((eventKey - 1) * 3);
   }
   render() {
     const { app } = this.props;
@@ -55,6 +60,12 @@ export default class Dashboard extends React.Component<{app?: typeof App.Type, h
               </div>
             </ListGroupItem>)
           }
+          <Pagination
+            bsSize="medium"
+            items={2}
+            activePage={app!.todo.currentFilter.start / 3 + 1}
+            onSelect={(eventKey: any) => this.handleSelect(eventKey)}
+          />
           </ListGroup>
         </Grid>
         <DevTools />
