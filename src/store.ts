@@ -1,4 +1,7 @@
-import AppStore from "./modules"; 
+import AppStore from "./modules";
+import { createBrowserHistory } from "history";
+
+export const history = createBrowserHistory();
 
 const initialState = {
     auth: {user: null},

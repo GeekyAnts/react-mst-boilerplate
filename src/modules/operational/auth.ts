@@ -1,5 +1,5 @@
 import { types } from  "mobx-state-tree";
-import { history } from "../../routes";
+import { history } from "../../store";
 import { RegisterUser, UpdateUser } from "../../types/user";
 import Path from "../../constants/routes";
 import App from "../../modules";

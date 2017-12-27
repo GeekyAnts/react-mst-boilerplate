@@ -8,7 +8,7 @@ import DbService from "../services/Db";
 import keys from "../constants/localStorage";
 import { Urls } from "../constants/routes";
 import { replaceUrlParams } from "../utils";
-import { history } from "../routes";
+import { history } from "../store";
 
 export type Methods = "PUSH"|"REPLACE"|"BACK"|"FORWARD";
 
